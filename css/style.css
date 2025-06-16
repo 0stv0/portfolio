@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'Tahoma';
+    src: url('../assets/windows-xp-tahoma.ttf');
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma';
+}
+.container
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: 0.35s;
+    background: url("../assets/bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+/* APPBAR */
+.appbar
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to Bottom, #215bcf, #235ad4);
+    border-top: #3d90ea solid 4px;
+    display: flex;
+    justify-content: space-between;
+}
+.appbar .time
+{
+    background: #0c9ced;
+    width: 80px;
+    height: 100%;
+    color: #fff;
+    line-height: 32.5px;
+    text-align: center;
+    border-top: 3px solid #2ebdea;
+    border-left: 3px solid #2ebdea;
+    font-size: 22px;
+}
+.appbar .opened
+{
+    display: flex;
+}
+.appbar .opened #start
+{
+    width: 100px;
+    height: 40px;
+    background: #389e3e;
+    border-radius: 0 12.5px 12.5px 0;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 23px;
+    border-right: 3px solid #1c5c20;
+}
+
+/* APPLIST */
+.applist
+{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.applist .app
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 5px;
+}
+.applist .app img
+{
+    width: 50px;
+    height: 50px;
+}
+.applist .app p
+{
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 0 0 3.5px #111;
+}
+
+/* WINDOW */
+.window
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.window .title-bar
+{
+    height: 30px;
+    cursor: grab;
+}
+.window .title-bar .title-bar-text
+{
+    font-size: 20px;
+}
+.window .window-body
+{
+    font-size: 16px;
+}
+
+/* ABOUT APP */
+#window-body-about
+{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+#window-body-about h4:nth-child(1)
+{
+    margin-top: 0;
+}
+#window-body-about h4
+{
+    margin-top: 15px;
+}
+#window-body-about .stack
+{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    justify-content: center;
+    padding-left: 7.5px;
+    gap: 4px;
+}
+#window-body-about .stack:nth-child(odd)
+{
+    background: transparent
+}
+#window-body-about ul
+{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#window-body-about ul li a
+{
+    text-decoration: none;
+}
+
+/* PROJECTS APP */
+#window-body-projects
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#window-body-projects .project
+{
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.11);
+    position: relative;
+}
+#window-body-projects .project h3
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+#window-body-projects .project p
+{
+    position: absolute;
+    top: 35px;
+    left: 5px;
+}
+#window-body-projects .project button
+{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+#window-body-projects .project:nth-child(even)
+{
+    background: transparent;
+}
+
+/* CONTACT APP */
+#window-body-contact
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+}
+#window-body-contact .input
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#window-body-contact .input textarea
+{
+    resize: none;
+    height: 200px;
+    border: 1px solid #7f9db9;
+}
+
+/* LOGIN SCREEN */
+.login
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #5a7edc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.login p
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+}
+.login .stripe
+{
+    width: 4px;
+    height: 700px;
+    background: linear-gradient(to Bottom, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.02));
+}
+.login .user
+{
+    display: flex;
+    margin-left: 35px;
+    gap: 15px;
+    cursor: pointer;
+}
+.login .user img
+{
+    width: 100px;
+    height: 100px;
+    background: #181818;
+    border-radius: 8px;
+    border: 4px solid rgb(201, 201, 201);
+}
+.login::after
+{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #00309c;
+    border-bottom: 2px solid #bad0f8;
+}
+.login::before
+{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #00309c;
+    border-top: 2px solid #f79538;
+}
+
+.loader
+{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loaderitem
+{
+    width: 120px;
+    height: 20px;
+    -webkit-mask: linear-gradient(90deg,#000 70%,#0000 0) 0/20%;
+    background: linear-gradient(#fff 0 0) 0/0% no-repeat #000;
+    animation: l4 2s infinite steps(6);
+}
+@keyframes l4 
+{
+    100% 
+    {
+        background-size: 120%
+    }
+}
+
+.mobile
+{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    background: #000;
+    font-size: 20px;
+}
