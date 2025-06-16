@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- TITLE -->
+        <title>www.mpawlak.dev</title>
+        <link rel="shortcut icon" href="./assets/stv-logo.png">
+        <!-- CDN --> 
+        <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+        <!-- FLAT -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="mobile" id="mobile" style="display: none;">
+            <p>Strona nie jest przystosowana pod urządzenia mobilne, dla najlepszych wrażeń zaleca się użycie urządzenia stacjonarnego, np. komputera.</p>
+        </div>
+        <div class="loader" id="loader">
+            <div id="loaderitem"></div>
+        </div>
+        <div class="login" id="login" style="display: none;">
+            <p>To begin, click your user name</p>
+            <div class="stripe"></div>
+            <div class="user" id="login-user">
+                <img src="./assets/stv-logo.png">
+                <p>stevku</p>
+            </div>
+        </div>
+        <div class="container" id="container" style="display: none;">
+            <!-- APPLIST -->
+            <div class="applist">
+                <div class="app" onclick="openApp('about');">
+                    <img src="./assets/apps/about.png">
+                    <p>O mnie</p>
+                </div>
+                <div class="app" onclick="openApp('projects');">
+                    <img src="./assets/apps/projekty.png">
+                    <p>Realizacje</p>
+                </div>
+                <div class="app" onclick="openApp('contact');">
+                    <img src="./assets/apps/kontakt.png">
+                    <p>Kontakt</p>
+                </div>
+                <div class="app" onclick="window.open('https://github.com/0stv0/portfolio');">
+                    <img src="./assets/apps/src.png">
+                    <p>Kod Strony</p>
+                </div>
+            </div>
+            <!-- APPBAR -->
+            <div class="appbar">
+                <div class="opened">
+                    <p id="start">START</p>
+                </div>
+                <div class="time" id="time">00:00</div>
+            </div>
+            <!-- ABOUT APP -->
+            <div class="window" id="window-about" style="width: 400px;display: none;">
+                <div class="title-bar" id="window-about-bar">
+                    <div class="title-bar-text">O mnie</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeApp('about')"></button>
+                    </div>
+                </div>
+                <div class="window-body" id="window-body-about">
+                    <h4>Personalne</h4>
+                    <p>Jestem Mikołaj, mam 19 lat i zajmuje się tworzeniem wszelakiego rodzaju aplikacji internetowych - od zwykłych stron do zaawansowanych projektów.</p>
+                    <h4>TechStack</h4>
+                    <article class="stack">
+                        <p>HTML5, CSS3, VanillaJS (80%)</p>
+                        <progress max="100" value="80"></progress>
+                    </article>
+                    <article class="stack">
+                        <p>Node.js + ExpressJS (70%)</p>
+                        <progress max="100" value="70"></progress>
+                    </article>
+                    <article class="stack">
+                        <p>PHP Backend (55%)</p>
+                        <progress max="100" value="55"></progress>
+                    </article>
+                    <article class="stack">
+                        <p>Java (50%)</p>
+                        <progress max="100" value="50"></progress>
+                    </article>
+                    <article class="stack">
+                        <p>React Frontend (45%)</p>
+                        <progress max="100" value="45"></progress>
+                    </article>
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="">Dribbble ⟶</a></li>
+                        <li><a href="">LinkedIn ⟶</a></li>
+                        <li><a href="">YouTube ⟶</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- PROJECTS APP -->
+            <div class="window" id="window-projects" style="width: 600px;display: none;">
+                <div class="title-bar" id="window-projects-bar">
+                    <div class="title-bar-text">Realizacje</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeApp('projects')"></button>
+                    </div>
+                </div>
+                <div class="window-body" id="window-body-projects">
+                    <article class="project">
+                        <h3>The Scriptorium</h3>
+                        <p>Strona stworzona dla sklepu internetowego sprzedającego modyfikacje do gry FiveM oraz usług graficznych. Posiada system logowania dla adminów oraz pełny panel zarządzania stworzony w języku PHP.</p>
+                        <button onclick="window.open('https://thescriptorium.eu/');">PODGLĄD</button>
+                    </article>
+                    <article class="project">
+                        <h3>Conves Roleplay</h3>
+                        <p>Strona stworzona dla serwera w grze FiveM, posiada pełny panel admina stworzony w języku PHP.</p>
+                        <button onclick="window.open('https://conves-roleplay.pl/');">PODGLĄD</button>
+                    </article>
+                </div>
+            </div>
+            <!-- CONTACT APP -->
+            <div class="window" id="window-contact" style="width: 400px;display: none;">
+                <div class="title-bar" id="window-contact-bar">
+                    <div class="title-bar-text">Kontakt</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeApp('contact')"></button>
+                    </div>
+                </div>
+                <div class="window-body" id="window-body-contact">
+                    <article class="input">
+                        <label>Wyślij do</label>
+                        <input type="text" disabled value="kontakt@mpawlak.dev">
+                    </article>
+                    <article class="input">
+                        <label>Dane</label>
+                        <input type="text" id="mail-name" placeholder="Podaj swoje imię">
+                    </article>
+                    <article class="input">
+                        <label>Email</label>
+                        <input type="email" id="mail-email" placeholder="Podaj swój email do kontaktu">
+                    </article>
+                    <article class="input">
+                        <label>Treść wiadomości</label>
+                        <textarea id="mail-content"></textarea>
+                    </article>
+                    <button onclick="sendMail();">WYŚLIJ WIADOMOŚĆ</button>
+                </div>
+            </div>
+        </div>
+        <!-- JS -->
+        <script src="./js/app.js" text="text/javascript"></script>
+        <script src="./js/drag.js" text="text/javascript"></script>
+    </body>
+</html>
